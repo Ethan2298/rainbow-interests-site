@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rainbow Interests</title>
+<title>Locations - Rainbow Interests</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Host+Grotesk:wght@400&family=Inter:wght@400;500;600&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Geist+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: rgb(26, 26, 30);
-  background: rgb(26, 26, 30);
+  background: rgb(235, 232, 228);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -63,9 +63,9 @@ img {
   height: 100%;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.7;
+  opacity: 0.4;
   mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 256px 256px;
 }
@@ -294,31 +294,22 @@ img {
 .mobile-nav-close::before { transform: rotate(45deg); }
 .mobile-nav-close::after { transform: rotate(-45deg); }
 
-/* ─── HERO ─── */
-.hero {
+/* ─── PAGE HEADER ─── */
+.page-header {
   padding: 80px 64px 0 72px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
 }
 
-.hero h1 {
+.page-header h1 {
   font-family: 'Geist Mono', monospace;
-  font-size: 64px;
+  font-size: 56px;
   font-weight: 400;
   line-height: 1.1em;
   letter-spacing: -0.04em;
   color: rgb(26, 26, 30);
-  margin-bottom: 32px;
-  max-width: 680px;
+  margin-bottom: 16px;
 }
 
-.hero h1 em {
-  font-style: normal;
-  color: rgb(56, 127, 239);
-}
-
-.hero p {
+.page-header p {
   font-family: 'Host Grotesk', sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -328,180 +319,9 @@ img {
   letter-spacing: -0.01em;
 }
 
-/* ─── HERO CARD ─── */
-.hero-card {
-  position: relative;
-  display: block;
-  margin: 12px 64px 0 72px;
-  border-radius: 0;
-  overflow: hidden;
-  min-height: 120px;
-  color: white;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-}
-
-.hero-card:last-of-type {
-  margin-bottom: 48px;
-}
-
-.hero-card:hover {
-  transform: scale(1.015);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
-}
-
-.hero-card-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-card:hover .hero-card-bg {
-  transform: scale(1.05);
-}
-
-.hero-card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
-  transition: background 0.4s ease;
-}
-
-.hero-card:hover .hero-card-overlay {
-  background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.4) 100%);
-}
-
-.hero-card-content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 120px;
-  padding: 24px 32px;
-  gap: 24px;
-}
-
-.hero-card-text {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.hero-heading {
-  font-family: 'Geist Mono', monospace;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.2em;
-  letter-spacing: -0.02em;
-  color: white;
-}
-
-
-.hero-heading em {
-  font-style: normal;
-  color: rgb(56, 127, 239);
-}
-
-.hero-subtext {
-  font-family: 'Host Grotesk', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.4em;
-  color: rgba(255, 255, 255, 0.6);
-  max-width: 360px;
-  letter-spacing: -0.01em;
-}
-
-.hero-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: 40px;
-  padding: 0 20px;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 100px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: rgb(26, 26, 30);
-  border: 1.5px solid rgba(26, 26, 30, 0.3);
-  width: fit-content;
-  flex-shrink: 0;
-  transition: background 0.2s ease, transform 0.2s ease;
-  overflow: hidden;
-  position: relative;
-  z-index: 3;
-}
-
-.hero-btn::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
-}
-
-.hero-card:hover .hero-btn::after {
-  animation: btn-shine 0.6s ease forwards;
-}
-
-.hero-btn:hover {
-  background: rgba(255, 255, 255, 1);
-  transform: scale(1.03);
-}
-
-@keyframes btn-shine {
-  0% { left: -100%; }
-  100% { left: 150%; }
-}
-
-.hero-btn svg {
-  width: 14px;
-  height: 14px;
-  fill: none;
-  stroke: rgb(26, 26, 30);
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-/* ─── DIVIDER ─── */
-.section-divider {
-  margin: 0 64px 0 72px;
-  padding: 48px 0;
-}
-
-.section-divider .line {
-  width: 100%;
-  height: 1px;
-  background: rgba(26, 26, 30, 0.06);
-}
-
 /* ─── LOCATIONS ─── */
 .locations {
-  padding: 0 64px 64px 72px;
-}
-
-.locations h2 {
-  font-family: 'Geist Mono', monospace;
-  font-size: 40px;
-  font-weight: 400;
-  line-height: 1.15em;
-  letter-spacing: -0.03em;
-  margin-bottom: 40px;
+  padding: 48px 64px 64px 72px;
 }
 
 .locations-grid {
@@ -668,149 +488,38 @@ img {
   color: rgb(26, 26, 30);
 }
 
-
 /* ─── RESPONSIVE: TABLET ─── */
 @media (max-width: 1024px) {
-  body {
-    padding: 24px;
-  }
-
-  .paper {
-    border-radius: 4px;
-  }
-
-  .hero {
-    padding: 60px 48px 0 56px;
-  }
-
-  .hero h1 {
-    font-size: 56px;
-  }
-
-  .hero-card {
-    margin: 24px 24px 0;
-  }
-
-  .hero-heading {
-    font-size: 48px;
-  }
-
-  .section-divider {
-    margin: 0 48px 0 56px;
-  }
-
-  .locations {
-    padding: 0 48px 48px 56px;
-  }
-
-  .locations h2 {
-    font-size: 40px;
-  }
-
-  .footer {
-    padding: 32px 48px 32px 56px;
-  }
-
+  body { padding: 24px; }
+  .paper { border-radius: 4px; }
+  .page-header { padding: 60px 48px 0 56px; }
+  .page-header h1 { font-size: 48px; }
+  .locations { padding: 40px 48px 48px 56px; }
+  .footer { padding: 32px 48px 32px 56px; }
 }
 
 /* ─── RESPONSIVE: MOBILE ─── */
 @media (max-width: 768px) {
-  body {
-    padding: 0;
-    background: rgb(252, 251, 249);
-  }
-
-  .paper {
-    max-width: 100%;
-    box-shadow: none;
-    border-radius: 0;
-  }
-
+  body { padding: 0; background: rgb(252, 251, 249); }
+  .paper { max-width: 100%; box-shadow: none; border-radius: 0; }
   .paper::before { left: 28px; }
-
   .nav-links { display: none; }
   .nav-get-started { display: none; }
   .nav-hamburger { display: flex; }
   .nav-pill { gap: 10px; padding: 7px 10px 7px 14px; }
   .nav-outer { padding: 12px 16px; }
-
-  .hero {
-    padding: 48px 24px 0 36px;
-  }
-
-  .hero h1 {
-    font-size: 38px;
-  }
-
-  .hero-card {
-    margin: 8px 16px 0;
-    min-height: 100px;
-    border-radius: 0;
-  }
-
-  .hero-card-content {
-    min-height: 100px;
-    padding: 20px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hero-heading {
-    font-size: 32px;
-    max-width: 100%;
-  }
-
-  .hero-subtext {
-    font-size: 16px;
-    max-width: 100%;
-  }
-
-  .section-divider {
-    margin: 0 24px 0 36px;
-    padding: 32px 0;
-  }
-
-  .locations {
-    padding: 0 24px 40px 36px;
-  }
-
-  .locations h2 {
-    font-size: 32px;
-  }
-
-  .location-card {
-    min-width: 100%;
-  }
-
-  .location-card h3 {
-    font-size: 24px;
-  }
-
-  .footer {
-    padding: 28px 24px 28px 36px;
-    flex-direction: column;
-    gap: 28px;
-  }
-
-  .footer-left, .footer-right {
-    max-width: 100%;
-  }
-
+  .page-header { padding: 48px 24px 0 36px; }
+  .page-header h1 { font-size: 32px; }
+  .locations { padding: 32px 24px 40px 36px; }
+  .location-card { min-width: 100%; }
+  .footer { padding: 28px 24px 28px 36px; flex-direction: column; gap: 28px; }
+  .footer-left, .footer-right { max-width: 100%; }
 }
 
 /* ─── RESPONSIVE: SMALL PHONE ─── */
 @media (max-width: 400px) {
-  .hero-heading {
-    font-size: 32px;
-  }
-
-  .locations h2 {
-    font-size: 28px;
-  }
-
-  .mobile-nav-overlay a {
-    font-size: 32px;
-  }
+  .page-header h1 { font-size: 28px; }
+  .mobile-nav-overlay a { font-size: 32px; }
 }
 </style>
 </head>
@@ -848,84 +557,47 @@ img {
     <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu"></button>
   </div>
 
-  <!-- ─── HERO ─── -->
-  <section class="hero" id="hero">
-    <h1>A Company<br>Designed To <em>Thrive</em></h1>
-    <p>Building spaces where creativity, wellness, and community converge across the Southeast.</p>
-  </section>
-
-  <!-- ─── DIVIDER ─── -->
-  <div class="section-divider">
-    <span class="line"></span>
+  <!-- ─── PAGE HEADER ─── -->
+  <div class="page-header">
+    <h1>Our Locations</h1>
+    <p>Explore our spaces across the Southeast where creativity and community come together.</p>
   </div>
 
-  <!-- ─── VISION CARD ─── -->
-  <a href="vision.html" class="hero-card">
-    <img
-      class="hero-card-bg"
-      src="https://framerusercontent.com/images/ZPeWLCAPr9negdElGk5qzVOw7kM.png"
-      alt="Rainbow Interests"
-      loading="eager"
-    >
-    <div class="hero-card-overlay"></div>
-    <div class="hero-card-content">
-      <div class="hero-card-text">
-        <h2 class="hero-heading">Read Our Vision</h2>
-        <p class="hero-subtext">Discover what drives us to build spaces where creativity and community thrive.</p>
+  <!-- ─── LOCATIONS ─── -->
+  <section class="locations">
+    <div class="locations-grid">
+      <div class="location-card">
+        <img
+          src="https://framerusercontent.com/images/uPhsWU0Pwt2KeFh8Hnx8jhKa7kU.png"
+          alt="South Florida"
+          loading="lazy"
+        >
+        <h3>South Florida</h3>
+        <div class="location-list">
+          <span>The NOW Fort Lauderdale</span>
+          <span>The NOW Plantation</span>
+          <span>The NOW Wynwood</span>
+          <span>The NOW Pinecrest</span>
+        </div>
       </div>
-      <span class="hero-btn">
-        Read our Vision
-        <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-      </span>
-    </div>
-  </a>
-
-  <!-- ─── LOCATIONS CARD ─── -->
-  <a href="locations.html" class="hero-card" id="locations">
-    <img
-      class="hero-card-bg"
-      src="https://framerusercontent.com/images/uPhsWU0Pwt2KeFh8Hnx8jhKa7kU.png"
-      alt="Our Locations"
-      loading="lazy"
-    >
-    <div class="hero-card-overlay"></div>
-    <div class="hero-card-content">
-      <div class="hero-card-text">
-        <h2 class="hero-heading">Our Locations</h2>
-        <p class="hero-subtext">Explore our spaces across the Southeast where creativity and community come together.</p>
+      <div class="location-card">
+        <img
+          src="https://framerusercontent.com/images/4qpPu3lyi6XgwQPf7u2fJ8jVqk.png"
+          alt="Colorado"
+          loading="lazy"
+        >
+        <h3>Soon: Colorado</h3>
+        <div class="location-list">
+          <span>Coming Soon</span>
+        </div>
       </div>
-      <span class="hero-btn">
-        View Locations
-        <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-      </span>
     </div>
-  </a>
-
-  <!-- ─── HISTORY CARD ─── -->
-  <a href="history.html" class="hero-card">
-    <img
-      class="hero-card-bg"
-      src="https://framerusercontent.com/images/4qpPu3lyi6XgwQPf7u2fJ8jVqk.png"
-      alt="Our Milestones"
-      loading="lazy"
-    >
-    <div class="hero-card-overlay"></div>
-    <div class="hero-card-content">
-      <div class="hero-card-text">
-        <h2 class="hero-heading">Our Milestones</h2>
-        <p class="hero-subtext">How we started and what we've accomplished so far.</p>
-      </div>
-      <span class="hero-btn">
-        View Milestones
-        <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-      </span>
-    </div>
-  </a>
+  </section>
 
   <!-- ─── FOOTER ─── -->
   <footer class="footer">
     <div class="footer-left">
-      <a href="/" class="footer-logo">
+      <a href="index.html" class="footer-logo">
         <svg viewBox="-20 -40 240 170" xmlns="http://www.w3.org/2000/svg">
           <path d="M 20 120 L 20 60 A 80 80 0 0 1 180 60 L 180 120" fill="none" stroke="#387FEF" stroke-width="16" stroke-linecap="square"/>
           <path d="M 44 120 L 44 60 A 56 56 0 0 1 156 60 L 156 120" fill="none" stroke="#FFE154" stroke-width="16" stroke-linecap="square"/>

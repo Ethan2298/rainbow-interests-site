@@ -1,0 +1,5 @@
+<svg viewBox="4 -28 192 156" xmlns="http://www.w3.org/2000/svg" width="192" height="156">
+  <path d="M 20 120 L 20 60 A 80 80 0 0 1 180 60 L 180 120" fill="none" stroke="#387FEF" stroke-width="16" stroke-linecap="square"/>
+  <path d="M 44 120 L 44 60 A 56 56 0 0 1 156 60 L 156 120" fill="none" stroke="#FFE154" stroke-width="16" stroke-linecap="square"/>
+  <path d="M 68 120 L 68 60 A 32 32 0 0 1 132 60 L 132 120" fill="none" stroke="#FF3F5A" stroke-width="16" stroke-linecap="square"/>
+</svg>
