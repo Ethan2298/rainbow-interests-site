@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rainbow Interests</title>
+<title>Our Vision — Rainbow Interests</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Host+Grotesk:wght@400&family=Inter:wght@400;500;600&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Geist+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -39,7 +39,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-
 
 /* ─── THE PAPER ─── */
 .paper {
@@ -90,7 +89,15 @@ img {
   width: 1px;
   height: 100%;
   background: rgba(220, 80, 80, 0.22);
-  z-index: 2;
+  z-index: 0;
+}
+
+/* ─── CENTERED CONTENT WRAPPER ─── */
+.content-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-left: 72px;
+  padding-right: 64px;
 }
 
 /* ─── NAVBAR ─── */
@@ -273,7 +280,7 @@ img {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgb(252, 251, 249);
+  background: rgb(26, 26, 30);
   border: none;
   cursor: pointer;
   display: flex;
@@ -292,280 +299,123 @@ img {
 .mobile-nav-close::before { transform: rotate(45deg); }
 .mobile-nav-close::after { transform: rotate(-45deg); }
 
-/* ─── HERO ─── */
-/* ─── CENTERED CONTENT WRAPPER ─── */
-.content-wrap {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding-left: 72px;
-  padding-right: 64px;
-}
-
-.hero {
-  padding-top: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.hero h1 {
-  font-family: 'Geist Mono', monospace;
-  font-size: 72px;
-  font-weight: 600;
-  line-height: 1.1em;
-  letter-spacing: -0.04em;
-  color: rgb(26, 26, 30);
-  margin-bottom: 32px;
-  max-width: 760px;
-}
-
-.hero h1 em {
-  font-style: normal;
-  color: rgb(26, 26, 30);
+/* ─── VISION HERO ─── */
+.vision-hero {
   position: relative;
-  display: inline-block;
-  isolation: isolate;
-}
-
-.hero h1 em::after {
-  content: '';
-  position: absolute;
-  left: -8px;
-  right: -8px;
-  bottom: -30px;
-  height: 48px;
-  z-index: 1;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 48' preserveAspectRatio='none'%3E%3Cpath d='M3 10 C15 4, 35 16, 55 8 S85 3, 110 11 S145 16, 170 6 S192 10, 197 8' fill='none' stroke='%23387FEF' stroke-width='8' stroke-linecap='round' opacity='0.8'/%3E%3Cpath d='M6 24 C25 17, 45 30, 70 22 S105 15, 130 23 S158 29, 175 19 S194 24, 198 22' fill='none' stroke='%23FFE154' stroke-width='7' stroke-linecap='round' opacity='0.85'/%3E%3Cpath d='M2 37 C20 31, 42 43, 65 35 S95 29, 118 36 S150 42, 178 33 S193 37, 197 35' fill='none' stroke='%23FF3F5A' stroke-width='7' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E") no-repeat;
-  background-size: 100% 100%;
-}
-
-.hero p {
-  font-family: 'Host Grotesk', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.5em;
-  color: rgba(26, 26, 30, 0.5);
-  max-width: 480px;
-  letter-spacing: -0.01em;
-}
-
-/* ─── HERO CARD ─── */
-.hero-card {
-  position: relative;
-  display: block;
-  margin: 12px 0 0;
-  border-radius: 0;
+  width: 100%;
+  min-height: 480px;
   overflow: hidden;
-  min-height: 120px;
-  color: white;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  z-index: 1;
 }
 
-.hero-card:last-of-type {
-  margin-bottom: 48px;
-}
-
-.hero-card:hover {
-  transform: scale(1.015);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
-}
-
-.hero-card-bg {
+.vision-hero img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.hero-card:hover .hero-card-bg {
-  transform: scale(1.05);
-}
-
-.hero-card-overlay {
+.vision-hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
-  transition: background 0.4s ease;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.5) 100%);
 }
 
-.hero-card:hover .hero-card-overlay {
-  background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.4) 100%);
-}
-
-.hero-card-content {
+.vision-hero-content {
   position: relative;
   z-index: 2;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 120px;
-  padding: 24px 32px;
-  gap: 24px;
-}
-
-.hero-card-text {
-  display: flex;
   flex-direction: column;
-  gap: 4px;
+  align-items: flex-start;
+  text-align: left;
+  justify-content: center;
+  min-height: 480px;
+  padding: 64px;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
-.hero-heading {
+.vision-hero h1 {
   font-family: 'Geist Mono', monospace;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.2em;
-  letter-spacing: -0.02em;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1.1em;
+  letter-spacing: -0.04em;
   color: white;
+  margin-bottom: 16px;
 }
 
-
-.hero-heading em {
-  font-style: normal;
-  color: rgb(56, 127, 239);
-}
-
-.hero-subtext {
+.vision-hero p {
   font-family: 'Host Grotesk', sans-serif;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 1.4em;
-  color: rgba(255, 255, 255, 0.6);
-  max-width: 360px;
+  line-height: 1.5em;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 560px;
+}
+
+/* ─── VISION CONTENT ─── */
+.vision-body {
+  padding: 64px 0 80px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vision-intro {
+  font-family: 'Host Grotesk', sans-serif;
+  font-size: 20px;
+  line-height: 1.7em;
+  color: rgba(26, 26, 30, 0.7);
+  max-width: 100%;
+  margin-bottom: 64px;
   letter-spacing: -0.01em;
 }
 
-.hero-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: 40px;
-  padding: 0 20px;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 100px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: rgb(26, 26, 30);
-  border: 1.5px solid rgba(26, 26, 30, 0.3);
-  width: fit-content;
-  flex-shrink: 0;
-  transition: background 0.2s ease, transform 0.2s ease;
-  overflow: hidden;
-  position: relative;
-  z-index: 3;
+.vision-section {
+  margin-bottom: 56px;
 }
 
-.hero-btn::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+.vision-section:last-child {
+  margin-bottom: 0;
 }
 
-.hero-card:hover .hero-btn::after {
-  animation: btn-shine 0.6s ease forwards;
-}
-
-.hero-btn:hover {
-  background: rgba(255, 255, 255, 1);
-  transform: scale(1.03);
-}
-
-@keyframes btn-shine {
-  0% { left: -100%; }
-  100% { left: 150%; }
-}
-
-.hero-btn svg {
-  width: 14px;
-  height: 14px;
-  fill: none;
-  stroke: rgb(26, 26, 30);
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-/* ─── DIVIDER ─── */
-.section-divider {
-  padding: 48px 0;
-}
-
-.section-divider .line {
-  width: 100%;
-  height: 1px;
-  background: rgba(26, 26, 30, 0.06);
-}
-
-/* ─── LOCATIONS ─── */
-.locations {
-  padding-bottom: 64px;
-}
-
-.locations h2 {
+.vision-section h2 {
   font-family: 'Geist Mono', monospace;
-  font-size: 40px;
-  font-weight: 400;
-  line-height: 1.15em;
-  letter-spacing: -0.03em;
-  margin-bottom: 40px;
-}
-
-.locations-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-}
-
-.location-card {
-  flex: 1;
-  min-width: 260px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.location-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-.location-card h3 {
-  font-family: 'Geist Mono', monospace;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 400;
   line-height: 1.2em;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  color: rgb(26, 26, 30);
+  margin-bottom: 24px;
 }
 
-.location-list {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.location-list span {
+.vision-section p {
   font-family: 'Host Grotesk', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.4em;
-  color: rgba(26, 26, 30, 0.55);
+  font-size: 17px;
+  line-height: 1.75em;
+  color: rgba(26, 26, 30, 0.6);
+  max-width: 100%;
+  margin-bottom: 20px;
   letter-spacing: -0.01em;
+}
+
+.vision-section p:last-child {
+  margin-bottom: 0;
+}
+
+.vision-section strong {
+  color: rgb(26, 26, 30);
+  font-weight: 500;
+}
+
+.vision-divider {
+  width: 48px;
+  height: 1px;
+  background: rgba(26, 26, 30, 0.1);
+  margin: 56px auto;
 }
 
 /* ─── FOOTER ─── */
@@ -689,141 +539,41 @@ img {
   color: rgb(26, 26, 30);
 }
 
-
 /* ─── RESPONSIVE: TABLET ─── */
 @media (max-width: 1024px) {
-  body {
-    padding: 24px;
-  }
-
-  .paper {
-    border-radius: 4px;
-  }
-
-  .content-wrap {
-    padding-left: 56px;
-    padding-right: 48px;
-  }
-
-  .hero {
-    padding-top: 60px;
-  }
-
-  .hero h1 {
-    font-size: 56px;
-  }
-
-  .hero-heading {
-    font-size: 48px;
-  }
-
-  .locations h2 {
-    font-size: 40px;
-  }
-
+  body { padding: 24px; }
+  .paper { border-radius: 4px; }
+  .content-wrap { padding-left: 56px; padding-right: 48px; }
+  .vision-hero h1 { font-size: 52px; }
+  .vision-hero-content { padding: 48px; }
+  .vision-section h2 { font-size: 28px; }
 }
 
 /* ─── RESPONSIVE: MOBILE ─── */
 @media (max-width: 768px) {
-  body {
-    padding: 0;
-    background: rgb(252, 251, 249);
-  }
-
-  .paper {
-    max-width: 100%;
-    box-shadow: none;
-    border-radius: 0;
-  }
-
+  body { padding: 0; background: rgb(252, 251, 249); }
+  .paper { max-width: 100%; box-shadow: none; border-radius: 0; }
   .paper::before { left: 12px; }
-
   .nav-links { display: none; }
   .nav-get-started { display: none; }
   .nav-hamburger { display: flex; }
   .nav-pill { gap: 10px; padding: 7px 10px 7px 14px; }
   .nav-outer { padding: 12px 16px; }
-
-  .content-wrap {
-    padding-left: 36px;
-    padding-right: 24px;
-  }
-
-  .hero {
-    padding-top: 48px;
-  }
-
-  .hero h1 {
-    font-size: 38px;
-  }
-
-  .hero-card {
-    min-height: 100px;
-    border-radius: 0;
-  }
-
-  .hero-card-content {
-    min-height: 100px;
-    padding: 20px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hero-heading {
-    font-size: 32px;
-    max-width: 100%;
-  }
-
-  .hero-subtext {
-    font-size: 16px;
-    max-width: 100%;
-  }
-
-  .section-divider {
-    padding: 32px 0;
-  }
-
-  .locations {
-    padding-bottom: 40px;
-  }
-
-  .locations h2 {
-    font-size: 32px;
-  }
-
-  .location-card {
-    min-width: 100%;
-  }
-
-  .location-card h3 {
-    font-size: 24px;
-  }
-
-  .footer {
-    padding: 28px 0;
-    flex-direction: column;
-    gap: 28px;
-  }
-
-  .footer-left, .footer-right {
-    max-width: 100%;
-  }
-
+  .content-wrap { padding-left: 36px; padding-right: 24px; }
+  .vision-hero { min-height: 340px; }
+  .vision-hero-content { min-height: 340px; padding: 32px 24px; }
+  .vision-hero h1 { font-size: 36px; }
+  .vision-hero p { font-size: 17px; }
+  .vision-intro { font-size: 18px; }
+  .vision-section h2 { font-size: 26px; }
+  .vision-section p { font-size: 16px; }
+  .footer { padding: 28px 0; flex-direction: column; gap: 28px; }
+  .footer-left, .footer-right { max-width: 100%; }
 }
 
-/* ─── RESPONSIVE: SMALL PHONE ─── */
 @media (max-width: 400px) {
-  .hero-heading {
-    font-size: 32px;
-  }
-
-  .locations h2 {
-    font-size: 28px;
-  }
-
-  .mobile-nav-overlay a {
-    font-size: 32px;
-  }
+  .vision-hero h1 { font-size: 30px; }
+  .mobile-nav-overlay a { font-size: 32px; }
 }
 </style>
 </head>
@@ -861,80 +611,76 @@ img {
     <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu"></button>
   </div>
 
-  <!-- ─── HERO ─── -->
-  <section class="hero content-wrap" id="hero">
-    <h1>Franchise Operations<br>Designed To <em>Thrive</em></h1>
-    <p>Operating spaces where culture, autonomy, and performance converge.</p>
-  </section>
-
-  <!-- ─── DIVIDER ─── -->
-  <div class="section-divider content-wrap">
-    <span class="line"></span>
-  </div>
-
-  <div class="content-wrap">
-  <!-- ─── VISION CARD ─── -->
-  <a href="vision.html" class="hero-card">
+  <!-- ─── VISION HERO ─── -->
+  <div class="vision-hero" style="margin-top: -120px; padding-top: 120px;">
     <img
-      class="hero-card-bg"
       src="https://framerusercontent.com/images/ZPeWLCAPr9negdElGk5qzVOw7kM.png"
-      alt="Rainbow Interests"
+      alt="Rainbow Interests Vision"
       loading="eager"
     >
-    <div class="hero-card-overlay"></div>
-    <div class="hero-card-content">
-      <div class="hero-card-text">
-        <h2 class="hero-heading">Read Our Vision</h2>
-        <p class="hero-subtext">Discover what drives us to build spaces where creativity and community thrive.</p>
-      </div>
-      <span class="hero-btn">
-        Read our Vision
-        <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-      </span>
+    <div class="vision-hero-overlay"></div>
+    <div class="vision-hero-content">
+      <h1>Our Vision</h1>
+      <p>Extraordinary things don't have to be rare. They only feel that way when we place them too high to reach.</p>
     </div>
-  </a>
+  </div>
 
-  <!-- ─── LOCATIONS CARD ─── -->
-  <a href="locations.html" class="hero-card" id="locations">
-    <img
-      class="hero-card-bg"
-      src="https://framerusercontent.com/images/uPhsWU0Pwt2KeFh8Hnx8jhKa7kU.png"
-      alt="Our Locations"
-      loading="lazy"
-    >
-    <div class="hero-card-overlay"></div>
-    <div class="hero-card-content">
-      <div class="hero-card-text">
-        <h2 class="hero-heading">Our Locations</h2>
-        <p class="hero-subtext">Explore our spaces across the Southeast where creativity and community come together.</p>
-      </div>
-      <span class="hero-btn">
-        View Locations
-        <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-      </span>
-    </div>
-  </a>
+  <!-- ─── VISION CONTENT ─── -->
+  <div class="vision-body content-wrap">
 
-  <!-- ─── HISTORY CARD ─── -->
-  <a href="history.html" class="hero-card">
-    <img
-      class="hero-card-bg"
-      src="https://framerusercontent.com/images/4qpPu3lyi6XgwQPf7u2fJ8jVqk.png"
-      alt="Our Milestones"
-      loading="lazy"
-    >
-    <div class="hero-card-overlay"></div>
-    <div class="hero-card-content">
-      <div class="hero-card-text">
-        <h2 class="hero-heading">Our Milestones</h2>
-        <p class="hero-subtext">How we started and what we've accomplished so far.</p>
-      </div>
-      <span class="hero-btn">
-        View Milestones
-        <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-      </span>
-    </div>
-  </a>
+    <p class="vision-intro">Rainbow Interests starts with a simple idea: extraordinary things don't have to be rare. They only feel that way when we place them too high to reach &mdash; when we put the work on a pedestal, or ourselves on one. But when you bring the extraordinary down to earth and make it ordinary, something beautiful happens. There's room again. Room to pause. Room to breathe. Room for the kind of life that actually feels like living.<br><br>That's what we're building here.</p>
+
+    <div class="vision-divider"></div>
+
+    <section class="vision-section">
+      <h2>What We Believe Makes a Great Company</h2>
+      <p>We believe three things separate a great company from an ordinary one.</p>
+      <p><strong>Optimism and self-belief at every level.</strong> Not just at the top. Every person in this company &mdash; from the newest hire to the most senior leader &mdash; needs to believe they can do a great job and feel confident that they will. That belief isn't a perk or a talking point. It's the foundation everything else is built on.</p>
+      <p><strong>A culture of cooperation on a grand scale.</strong> Individual talent matters, but it's not what carries us. What carries us is people working together &mdash; genuinely, willingly, across every part of the organization &mdash; because they understand that none of this works alone.</p>
+      <p><strong>The simple joy of achieving things together.</strong> There is a meaning that comes from growing alongside the people around you in a supportive community. It fills people with a kind of energy that is contagious &mdash; the kind of fuel that every human being needs to accomplish something big. That energy isn't manufactured. It comes from an environment that is supportive and nurturing, and it produces a contentedness that doesn't slow people down &mdash; it steadies them. It makes excellence feel natural instead of forced.</p>
+    </section>
+
+    <div class="vision-divider"></div>
+
+    <section class="vision-section">
+      <h2>What We Do</h2>
+      <p>Rainbow Interests is a franchise operating group. We acquire franchise licenses with superior brands &mdash; up-and-coming companies that are designed to endure and that offer their markets the best option in their space. We don't chase trends. We look for long futures.</p>
+      <p>When we find locations with strong brands but poor management, we acquire and turn them around. When we open new locations, we treat every single one as both a business and a laboratory &mdash; testing, learning, and refining how we operate so that what once required heroic effort eventually requires only disciplined repetition.</p>
+    </section>
+
+    <div class="vision-divider"></div>
+
+    <section class="vision-section">
+      <h2>How We're Built</h2>
+      <p>The Figueroa family sits at the board level. We set strategic direction. But the company is designed to execute that direction autonomously &mdash; run day to day by people who are, frankly, better operators than we are. That's by design, not by accident.</p>
+      <p>We want Rainbow Interests to be proof that a family company can scale fast, operate with precision, and still leave room for the people at its center to live full, unhurried lives. Nobody in this family &mdash; or this company &mdash; should be doing something because they're compelled to. They should be doing it because they're motivated to.</p>
+    </section>
+
+    <div class="vision-divider"></div>
+
+    <section class="vision-section">
+      <h2>Where We Come From</h2>
+      <p>This company doesn't start from nothing. It stands on the shoulders of a family with entrepreneurship in its blood. Danny Figueroa came to the United States from Cuba during the Mariel boatlift in 1980 and built AC Wholesalers into a nationally recognized leader in online HVAC distribution &mdash; earning recognition from the Inc. 500 and Internet Retailer Top 500. Rose Figueroa built alongside him. That same drive runs through the family.</p>
+      <p>Rainbow Interests is where the family's future is invested. Not just financially, but in purpose. This is the next chapter &mdash; a continuation of that legacy, structured differently, built for the long arc.</p>
+    </section>
+
+    <div class="vision-divider"></div>
+
+    <section class="vision-section">
+      <h2>Where We're Going</h2>
+      <p>The experiment is this: how fast and how efficiently can a company scale while also being designed to last for generations &mdash; possibly forever, if done correctly?</p>
+      <p>Right now, we're in the massage franchise space, building out our existing licenses and acquiring underperforming locations where we can make them right. Over the next six years, every opening and every acquisition is a chance to refine the operating model toward something close to perfect. When the model is proven and the time is right, we'll expand into new brands.</p>
+      <p>But this is not just about growth. It's about building something that your children can inherit, that their children can inherit &mdash; a platform that gives each generation the same kind of foundation that was given to the one before it.</p>
+    </section>
+
+    <div class="vision-divider"></div>
+
+    <section class="vision-section">
+      <h2>The Invitation</h2>
+      <p>This is a family company, and it will be for generations. But the invitation is open.</p>
+      <p>If you believe that the extraordinary becomes possible the moment you stop treating it as something above you &mdash; if you want to be part of a place where the energy is supportive and nurturing, where people feel pride and respect for the people beside them, and where growing together isn't just a slogan but the actual experience of showing up to work &mdash; then come help us build it.</p>
+      <p><strong>This is the kind of great we mean.</strong></p>
+    </section>
 
   </div>
 
