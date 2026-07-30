@@ -459,8 +459,16 @@ img {
   color: rgba(26, 26, 30, 0.4);
 }
 
+.footer-address {
+  margin-top: 12px;
+  color: rgba(26, 26, 30, 0.55);
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.5em;
+}
+
 .footer-socials {
-  display: flex;
+  display: none;
   gap: 4px;
 }
 
@@ -489,7 +497,7 @@ img {
 }
 
 .footer-credit {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 5px;
   flex-wrap: wrap;
@@ -590,11 +598,9 @@ img {
       </div>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="vision.html">Vision</a>
-        <a href="history.html">History</a>
         <a href="locations.html">Locations</a>
       </div>
-      <a href="#" class="nav-get-started">Contact Us</a>
+      <a href="contact.html" class="nav-get-started">Contact Us</a>
       <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu">
         <span></span>
       </button>
@@ -604,9 +610,8 @@ img {
   <!-- ─── MOBILE NAV OVERLAY ─── -->
   <div class="mobile-nav-overlay" id="mobileNav">
     <a href="index.html" onclick="closeMobileNav()">Home</a>
-    <a href="vision.html" onclick="closeMobileNav()">Vision</a>
-    <a href="history.html" onclick="closeMobileNav()">History</a>
     <a href="locations.html" onclick="closeMobileNav()">Locations</a>
+    <a href="contact.html" onclick="closeMobileNav()">Contact Us</a>
     <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu"></button>
   </div>
 
@@ -694,7 +699,8 @@ img {
         </svg>
         <span>Rainbow Interests</span>
       </a>
-      <p class="footer-desc">Building spaces where creativity, wellness, and community converge.</p>
+      <p class="footer-desc">Rainbow Interests, LLC is a holding company supporting franchise operations where culture, autonomy, and performance converge.</p>
+      <address class="footer-address">Rainbow Interests, LLC<br>815 N. E. 2nd Ave<br>Suite #410<br>Fort Lauderdale, FL 33304<br><a href="tel:+17862239529">(786) 223-9529</a><br><a href="mailto:danny.figueroa@thenowmassage.com">danny.figueroa@thenowmassage.com</a></address>
       <div class="footer-socials">
         <a href="#" class="social-btn" aria-label="Twitter">
           <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -718,9 +724,10 @@ img {
       <span class="footer-right-heading">Navigation</span>
       <nav class="footer-nav">
         <a href="index.html">Home</a>
-        <a href="vision.html">Vision</a>
-        <a href="history.html">History</a>
         <a href="locations.html">Locations</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
       </nav>
     </div>
   </footer>
