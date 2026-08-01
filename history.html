@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Vision — Rainbow Interests</title>
+<title>History - Rainbow Interests</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Host+Grotesk:wght@400&family=Inter:wght@400;500;600&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Geist+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: rgb(26, 26, 30);
-  background: rgb(252, 251, 249);
+  background: rgb(235, 232, 228);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -44,10 +44,13 @@ img {
 .paper {
   position: relative;
   width: 100%;
-  max-width: 100%;
+  max-width: 900px;
   min-height: 100vh;
   background: rgb(252, 251, 249);
-  box-shadow: none;
+  box-shadow:
+    0 1px 3px rgba(0,0,0,0.04),
+    0 8px 24px rgba(0,0,0,0.06),
+    0 24px 60px rgba(0,0,0,0.04);
   overflow-x: clip;
 }
 
@@ -59,11 +62,12 @@ img {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 9999;
-  background-image: url('grain.png');
-  background-repeat: repeat;
-  opacity: 0.3;
+  z-index: 1;
+  opacity: 0.4;
   mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
 }
 
 /* ─── Notebook ruled lines ─── */
@@ -84,19 +88,11 @@ img {
   content: '';
   position: absolute;
   top: 0;
-  left: max(0px, calc(50% - 540px));
+  left: 56px;
   width: 1px;
   height: 100%;
   background: rgba(220, 80, 80, 0.22);
-  z-index: 0;
-}
-
-/* ─── CENTERED CONTENT WRAPPER ─── */
-.content-wrap {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding-left: 72px;
-  padding-right: 64px;
+  z-index: 2;
 }
 
 /* ─── NAVBAR ─── */
@@ -298,130 +294,84 @@ img {
 .mobile-nav-close::before { transform: rotate(45deg); }
 .mobile-nav-close::after { transform: rotate(-45deg); }
 
-/* ─── VISION HERO ─── */
-.vision-hero {
-  position: relative;
-  width: 100%;
-  min-height: 480px;
-  overflow: hidden;
-  z-index: 1;
+/* ─── PAGE HEADER ─── */
+.page-header {
+  padding: 80px 64px 0 72px;
 }
 
-.vision-hero img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.vision-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.5) 100%);
-}
-
-.vision-hero-content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  justify-content: center;
-  min-height: 480px;
-  padding: 64px;
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
-.vision-hero h1 {
+.page-header h1 {
   font-family: 'Geist Mono', monospace;
-  font-size: 64px;
-  font-weight: 600;
+  font-size: 56px;
+  font-weight: 400;
   line-height: 1.1em;
   letter-spacing: -0.04em;
-  color: white;
+  color: rgb(26, 26, 30);
   margin-bottom: 16px;
 }
 
-.vision-hero p {
+.page-header p {
   font-family: 'Host Grotesk', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.5em;
-  color: rgba(255, 255, 255, 0.75);
-  max-width: 560px;
-}
-
-/* ─── VISION CONTENT ─── */
-.vision-body {
-  padding: 64px 0 80px;
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.vision-intro {
-  font-family: 'Host Grotesk', sans-serif;
-  font-size: 20px;
-  line-height: 1.7em;
-  color: rgba(26, 26, 30, 0.7);
-  max-width: 100%;
-  margin-bottom: 64px;
+  color: rgba(26, 26, 30, 0.5);
+  max-width: 420px;
   letter-spacing: -0.01em;
 }
 
-.vision-section {
-  margin-bottom: 56px;
+/* ─── LOCATIONS ─── */
+.locations {
+  padding: 48px 64px 64px 72px;
 }
 
-.vision-section:last-child {
-  margin-bottom: 0;
+.locations-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
 }
 
-.vision-section h2 {
+.location-card {
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.location-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.location-card h3 {
   font-family: 'Geist Mono', monospace;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 400;
   line-height: 1.2em;
-  letter-spacing: -0.03em;
-  color: rgb(26, 26, 30);
-  margin-bottom: 24px;
+  letter-spacing: -0.02em;
 }
 
-.vision-section p {
+.location-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.location-list span {
   font-family: 'Host Grotesk', sans-serif;
-  font-size: 17px;
-  line-height: 1.75em;
-  color: rgba(26, 26, 30, 0.6);
-  max-width: 100%;
-  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4em;
+  color: rgba(26, 26, 30, 0.55);
   letter-spacing: -0.01em;
-}
-
-.vision-section p:last-child {
-  margin-bottom: 0;
-}
-
-.vision-section strong {
-  color: rgb(26, 26, 30);
-  font-weight: 500;
-}
-
-.vision-divider {
-  width: 48px;
-  height: 1px;
-  background: rgba(26, 26, 30, 0.1);
-  margin: 56px auto;
 }
 
 /* ─── FOOTER ─── */
 .footer {
   border-top: 1px solid rgba(26, 26, 30, 0.06);
-  padding: 40px 80px;
-  padding-left: 88px;
+  padding: 40px 64px 40px 72px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -542,36 +492,33 @@ img {
 @media (max-width: 1024px) {
   body { padding: 24px; }
   .paper { border-radius: 4px; }
-  .content-wrap { padding-left: 56px; padding-right: 48px; }
-  .vision-hero h1 { font-size: 52px; }
-  .vision-hero-content { padding: 48px; }
-  .vision-section h2 { font-size: 28px; }
+  .page-header { padding: 60px 48px 0 56px; }
+  .page-header h1 { font-size: 48px; }
+  .locations { padding: 40px 48px 48px 56px; }
+  .footer { padding: 32px 48px 32px 56px; }
 }
 
 /* ─── RESPONSIVE: MOBILE ─── */
 @media (max-width: 768px) {
   body { padding: 0; background: rgb(252, 251, 249); }
   .paper { max-width: 100%; box-shadow: none; border-radius: 0; }
-  .paper::before { left: 12px; }
+  .paper::before { left: 28px; }
   .nav-links { display: none; }
   .nav-get-started { display: none; }
   .nav-hamburger { display: flex; }
   .nav-pill { gap: 10px; padding: 7px 10px 7px 14px; }
   .nav-outer { padding: 12px 16px; }
-  .content-wrap { padding-left: 36px; padding-right: 24px; }
-  .vision-hero { min-height: 340px; }
-  .vision-hero-content { min-height: 340px; padding: 32px 24px; }
-  .vision-hero h1 { font-size: 36px; }
-  .vision-hero p { font-size: 17px; }
-  .vision-intro { font-size: 18px; }
-  .vision-section h2 { font-size: 26px; }
-  .vision-section p { font-size: 16px; }
-  .footer { padding: 28px 0; flex-direction: column; gap: 28px; }
+  .page-header { padding: 48px 24px 0 36px; }
+  .page-header h1 { font-size: 32px; }
+  .locations { padding: 32px 24px 40px 36px; }
+  .location-card { min-width: 100%; }
+  .footer { padding: 28px 24px 28px 36px; flex-direction: column; gap: 28px; }
   .footer-left, .footer-right { max-width: 100%; }
 }
 
+/* ─── RESPONSIVE: SMALL PHONE ─── */
 @media (max-width: 400px) {
-  .vision-hero h1 { font-size: 30px; }
+  .page-header h1 { font-size: 28px; }
   .mobile-nav-overlay a { font-size: 32px; }
 }
 </style>
@@ -610,90 +557,46 @@ img {
     <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu"></button>
   </div>
 
-  <!-- ─── VISION HERO ─── -->
-  <div class="vision-hero" style="margin-top: -120px; padding-top: 120px;">
-    <img
-      src="https://framerusercontent.com/images/ZPeWLCAPr9negdElGk5qzVOw7kM.png"
-      alt="Rainbow Interests Vision"
-      loading="eager"
-    >
-    <div class="vision-hero-overlay"></div>
-    <div class="vision-hero-content">
-      <h1>Our Vision</h1>
-      <p>We make extraordinary work ordinary, repeatable, and human.</p>
+  <!-- ─── PAGE HEADER ─── -->
+  <div class="page-header">
+    <h1>Our Milestones</h1>
+    <p>How we started, what we have built, and where the next chapter is headed.</p>
+  </div>
+
+  <!-- ─── MILESTONES ─── -->
+  <section class="locations">
+    <div class="locations-grid">
+      <div class="location-card">
+        <img
+          src="https://framerusercontent.com/images/4qpPu3lyi6XgwQPf7u2fJ8jVqk.png"
+          alt="Rainbow Interests milestones"
+          loading="lazy"
+        >
+        <h3>Built In South Florida</h3>
+        <div class="location-list">
+          <span>Opened and operated multiple The NOW Massage studios across Fort Lauderdale, Plantation, Wynwood, and Pinecrest.</span>
+          <span>Developed repeatable operating rhythms across recruiting, service quality, membership, and local leadership.</span>
+        </div>
+      </div>
+      <div class="location-card">
+        <img
+          src="https://framerusercontent.com/images/uPhsWU0Pwt2KeFh8Hnx8jhKa7kU.png"
+          alt="Rainbow Interests next chapter"
+          loading="lazy"
+        >
+        <h3>Next Chapter</h3>
+        <div class="location-list">
+          <span>Expanding the same operating system into Colorado while protecting culture, standards, and local execution.</span>
+          <span>Continuing to build spaces where wellness, creativity, and community can thrive.</span>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <!-- ─── VISION CONTENT ─── -->
-  <div class="vision-body content-wrap">
-
-    <p class="vision-intro">Rainbow Interests starts with a simple idea: extraordinary things do not have to be rare. Most companies in our space confuse urgency with importance and productivity with purpose. We build the other thing: a company that grows with discipline, protects quality, and leaves people better than it found them.<br><br>We choose care over speed, truth over image, and durability over shortcuts. That is the work.</p>
-
-    <div class="vision-divider"></div>
-
-    <section class="vision-section">
-      <h2>What We Believe Makes a Great Company</h2>
-      <p>Great companies are not built by slogans. They are built by standards people can feel every day.</p>
-      <p><strong>Self-belief is built, not wished into existence.</strong> Every person here should feel more capable six months from now than they do today because we coach, we train, and we hold a high bar.</p>
-      <p><strong>Cooperation beats heroics.</strong> Individual talent matters, but systems and teamwork win for decades. We do not build a culture that depends on burnout or lone geniuses.</p>
-      <p><strong>Joy is a performance strategy.</strong> People do their best work when they feel respected, safe to speak honestly, and proud of who they work with.</p>
-      <p><strong>Tradeoffs are real, and we name them.</strong> We will grow more slowly than we could. We will walk away from deals that do not meet our quality standard, even when the numbers look good. We invest in people before the return shows up on paper.</p>
-    </section>
-
-    <div class="vision-divider"></div>
-
-    <section class="vision-section">
-      <h2>What We Do</h2>
-      <p>Rainbow Interests is a franchise operating group. We acquire and operate licenses from strong brands built for long futures, not short cycles.</p>
-      <p>When we find locations with strong demand but weak operations, we turn them around. When we open new locations, we run each one as both a business and a laboratory &mdash; test, learn, document, repeat.</p>
-      <p>Our job is to turn great outcomes from rare events into normal operations.</p>
-    </section>
-
-    <div class="vision-divider"></div>
-
-    <section class="vision-section">
-      <h2>How We're Built</h2>
-      <p>The Figueroa family sits at the board level. We set strategic direction. But the company is designed to execute that direction autonomously &mdash; run day to day by people who are, frankly, better operators than we are. That's by design, not by accident.</p>
-      <p>We are building proof that a family company can scale with precision and still leave room for full, unhurried lives. Nobody in this company should do work because they are compelled to. They should do it because they are trusted, equipped, and motivated.</p>
-      <p><strong>How we operate when no one is watching:</strong> We report problems early. We fix root causes, not just symptoms. We keep promises to customers. We protect the standard even when it is inconvenient.</p>
-      <p><strong>How we keep learning safe:</strong> Experiments fail. That is part of the model. A location that only reports wins is hiding signal. When something does not work, we want to hear about it before we ask whose fault it was.</p>
-      <p><strong>How we stay vigilant:</strong> We do not trade safety, service quality, or team health for short-term growth. If a plan pressures those three, we change the plan.</p>
-    </section>
-
-    <div class="vision-divider"></div>
-
-    <section class="vision-section">
-      <h2>Where We Come From</h2>
-      <p>This company starts with my family. My father, Danny Figueroa, came to the United States from Cuba during the Mariel boatlift in 1980 and built AC Wholesalers into a nationally recognized leader in online HVAC distribution &mdash; with recognition from the Inc. 500 and Internet Retailer Top 500. My mother, Rose Figueroa, built it with him.</p>
-      <p>Rainbow Interests is our next chapter. We are carrying forward the same work ethic and long-term mindset, but in a new structure built to outlast us.</p>
-    </section>
-
-    <div class="vision-divider"></div>
-
-    <section class="vision-section">
-      <h2>Where We're Going</h2>
-      <p>The experiment is simple to say and hard to do: build a company that can scale and still deserve to exist 50 years from now.</p>
-      <p>Right now, we are focused on massage franchise operations &mdash; expanding existing licenses and improving underperforming locations. Every new opening and every turnaround sharpens one operating system we can trust across locations.</p>
-      <p>When priorities conflict, we choose in this order: customer trust, team health and development, operating quality, then short-term profit. Profit matters, but it follows discipline.</p>
-      <p>The long goal is multi-generational: a platform strong enough to be handed down, improved, and handed down again.</p>
-    </section>
-
-    <div class="vision-divider"></div>
-
-    <section class="vision-section">
-      <h2>The Invitation</h2>
-      <p>This is a family company, and it will be for generations. But the invitation is open.</p>
-      <p>If you want to build something ambitious without pretending people are disposable, you will fit here. If you want high standards, clear feedback, real ownership, and teammates who tell the truth early, you will fit here.</p>
-      <p>If you want speed at any cost, you will not.</p>
-      <p><strong>This is the kind of great we mean.</strong></p>
-    </section>
-
-  </div>
+  </section>
 
   <!-- ─── FOOTER ─── -->
-  <footer class="footer content-wrap">
+  <footer class="footer">
     <div class="footer-left">
-      <a href="/" class="footer-logo">
+      <a href="index.html" class="footer-logo">
         <svg viewBox="-20 -40 240 170" xmlns="http://www.w3.org/2000/svg">
           <path d="M 20 120 L 20 60 A 80 80 0 0 1 180 60 L 180 120" fill="none" stroke="#387FEF" stroke-width="16" stroke-linecap="square"/>
           <path d="M 44 120 L 44 60 A 56 56 0 0 1 156 60 L 156 120" fill="none" stroke="#FFE154" stroke-width="16" stroke-linecap="square"/>
