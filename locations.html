@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.classList.add('js');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Locations - Rainbow Interests</title>
@@ -83,6 +84,7 @@
   }
 }
 </style>
+<script src="site.js" defer></script>
 </head>
 <body>
 
@@ -98,17 +100,17 @@
         <a href="locations.html" aria-current="page">Locations</a>
       </div>
       <a href="contact.html" class="nav-get-started">Contact Us</a>
-      <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu">
+      <button type="button" class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
         <span></span>
       </button>
     </div>
   </nav>
 
-  <div class="mobile-nav-overlay" id="mobileNav">
-    <a href="index.html" onclick="closeMobileNav()">Home</a>
-    <a href="locations.html" onclick="closeMobileNav()">Locations</a>
-    <a href="contact.html" onclick="closeMobileNav()">Contact Us</a>
-    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu"></button>
+  <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="locations.html">Locations</a>
+    <a href="contact.html">Contact Us</a>
+    <button type="button" class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu"></button>
   </div>
 
   <div class="page-header content-wrap">
@@ -172,31 +174,5 @@
     </div>
   </footer>
 </div>
-
-<script>
-const navPill = document.getElementById('navPill');
-let ticking = false;
-
-window.addEventListener('scroll', function() {
-  if (!ticking) {
-    window.requestAnimationFrame(function() {
-      navPill.classList.toggle('scrolled', window.scrollY > 50);
-      ticking = false;
-    });
-    ticking = true;
-  }
-});
-
-const hamburgerBtn = document.getElementById('hamburgerBtn');
-const mobileNav = document.getElementById('mobileNav');
-const mobileNavClose = document.getElementById('mobileNavClose');
-
-hamburgerBtn?.addEventListener('click', () => mobileNav.classList.add('active'));
-mobileNavClose?.addEventListener('click', () => mobileNav.classList.remove('active'));
-
-function closeMobileNav() {
-  mobileNav.classList.remove('active');
-}
-</script>
 </body>
 </html>

@@ -79,6 +79,16 @@
   font-style: normal;
 }
 
+.legal-main a {
+  text-decoration: underline;
+  text-decoration-color: rgba(56, 127, 239, 0.45);
+  text-underline-offset: 3px;
+}
+
+.legal-main a:hover {
+  color: rgb(56, 127, 239);
+}
+
 .notice {
   margin-top: 40px;
   padding: 18px 20px;

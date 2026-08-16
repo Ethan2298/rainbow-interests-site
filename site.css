@@ -6,6 +6,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -35,7 +36,10 @@ img {
   width: 100%;
   min-height: 100vh;
   background: rgb(252, 251, 249);
-  overflow-x: clip;
+}
+
+body.nav-open {
+  overflow: hidden;
 }
 
 .content-wrap {
@@ -190,6 +194,13 @@ img {
 .nav-hamburger span::before { top: -5px; }
 .nav-hamburger span::after { top: 5px; }
 
+.nav-hamburger:focus-visible,
+.mobile-nav-overlay a:focus-visible,
+.mobile-nav-close:focus-visible {
+  outline: 2px solid rgb(56, 127, 239);
+  outline-offset: 4px;
+}
+
 .mobile-nav-overlay {
   display: none;
   position: fixed;
@@ -332,6 +343,13 @@ img {
 
 .footer-address a {
   color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(56, 127, 239, 0.45);
+  text-underline-offset: 3px;
+}
+
+.footer-address a:hover {
+  color: rgb(56, 127, 239);
 }
 
 .footer-right {
@@ -383,9 +401,24 @@ img {
 
 /* ─── RESPONSIVE: MOBILE ─── */
 @media (max-width: 768px) {
-  .nav-links { display: none; }
-  .nav-get-started { display: none; }
-  .nav-hamburger { display: flex; }
+  html.js .nav-links { display: none; }
+  html.js .nav-get-started { display: none; }
+  html.js .nav-hamburger { display: flex; }
+
+  html:not(.js) .nav-hamburger { display: none; }
+  html:not(.js) .nav-pill {
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+  }
+  html:not(.js) .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  html:not(.js) .nav-get-started { display: flex; }
+  html:not(.js) .mobile-nav-overlay { display: none !important; }
+
   .nav-pill { gap: 10px; padding: 7px 10px 7px 14px; }
   .nav-outer { padding: 12px 16px; }
 

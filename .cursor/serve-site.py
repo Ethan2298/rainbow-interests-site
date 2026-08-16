@@ -17,6 +17,7 @@ ALLOWED = frozenset(
         "privacy.html",
         "terms.html",
         "site.css",
+        "site.js",
         "legal.css",
         "logo-dark.svg",
         "grain.png",
