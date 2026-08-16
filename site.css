@@ -202,7 +202,8 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 8px;
+  padding: 72px 24px 120px;
 }
 
 .mobile-nav-overlay.active {
@@ -210,10 +211,12 @@ img {
 }
 
 .mobile-nav-overlay a {
+  display: block;
   font-family: 'Geist Mono', monospace;
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 400;
-  line-height: 1.3em;
+  line-height: 1.15;
+  padding: 10px 16px;
   color: rgb(26, 26, 30);
   transition: opacity 0.2s;
 }
@@ -418,6 +421,6 @@ img {
   }
 
   .mobile-nav-overlay a {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
