@@ -50,7 +50,7 @@ Use the same public callback URI supplied to Intuit:
 intuit auth login --profile COMPANY_NAME --env production --redirect-uri https://www.rainbowinterests.com/api/intuit-callback
 ```
 
-The official CLI listens locally at `http://localhost:9477/api/intuit-callback`. The Vercel function validates the response shape, forwards only approved query parameters, returns an empty redirect response, and sends the browser to that fixed local listener. The Intuit CLI validates the OAuth state before exchanging the authorization code.
+The official CLI listens locally at `http://localhost:9477/api/intuit-callback`. The Vercel function accepts GET only, requires the CLI's exact 32-character lowercase hexadecimal state format, validates success values, forwards only allowlisted OAuth error tokens, discards error descriptions, returns an empty redirect response with no-cache headers, and sends the browser to that fixed local listener. The Intuit CLI validates the OAuth state before exchanging the authorization code.
 
 ## Remaining portal requirements
 
