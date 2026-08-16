@@ -2,7 +2,7 @@
 
 ## Public app details
 
-- App name: Rainbow Interests QuickBooks CLI
+- App name: Rainbow Accounting CLI
 - Host domain: www.rainbowinterests.com
 - Launch URL: https://www.rainbowinterests.com/quickbooks.html
 - Connect or reconnect URL: https://www.rainbowinterests.com/quickbooks-connect.html
