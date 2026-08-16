@@ -12,6 +12,7 @@ required=(
   vision.html
   privacy.html
   terms.html
+  site.css
   legal.css
   logo-dark.svg
   grain.png

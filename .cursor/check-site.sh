@@ -30,6 +30,7 @@ grep -q "(786) 223-9529" "$body"
 expect "/vision.html" 200
 expect "/privacy.html" 200
 expect "/terms.html" 200
+expect "/site.css" 200
 expect "/legal.css" 200
 expect "/logo-dark.svg" 200
 expect "/grain.png" 200
