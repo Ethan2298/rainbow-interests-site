@@ -31,6 +31,7 @@
 - Data storage: The public website does not store QuickBooks records or OAuth tokens in an application database. The official CLI stores encrypted tokens on each authorized local device.
 - Hosting: The public website and OAuth relay are hosted by Vercel. The callback function defaults to Vercel's `iad1` US East region, while the public site is delivered through Vercel's global Anycast network.
 - Logging: Vercel runtime logs may include the callback request path and search parameters, including a short-lived, single-use authorization code. The current Hobby plan retains runtime logs for up to one hour.
+- Vercel plan: The project is currently on Hobby. Vercel restricts Hobby to personal or non-commercial use, so upgrade to Pro or obtain written confirmation from Vercel before using this business integration in production. Pro runtime-log retention is currently one day, so update the Privacy Policy and this guide if the plan changes.
 
 ## Current public DNS addresses
 
@@ -59,5 +60,6 @@ The official CLI listens locally at `http://localhost:9477/api/intuit-callback`.
 - Complete the app assessment accurately.
 - Obtain review of the updated legal pages before publishing them.
 - Recheck the Vercel DNS addresses immediately before entering the hosting IP fields.
+- Upgrade the Vercel project to Pro or obtain written confirmation that the current plan permits this business use, then update the documented runtime-log retention.
 - Select United States only under Accepted connections.
 - Register the production redirect URI after the assessment unlocks production credentials and redirect settings.
