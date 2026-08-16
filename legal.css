@@ -81,7 +81,8 @@
 
 .legal-main a {
   text-decoration: underline;
-  text-decoration-color: rgba(56, 127, 239, 0.45);
+  text-decoration-color: rgb(56, 127, 239);
+  text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
 
