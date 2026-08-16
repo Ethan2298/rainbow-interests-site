@@ -1,0 +1,11 @@
+{
+  "name": "Rainbow Interests",
+  "install": ".cursor/install.sh",
+  "start": ".cursor/start.sh",
+  "ports": [
+    {
+      "name": "Website",
+      "port": 8080
+    }
+  ]
+}
