@@ -12,6 +12,9 @@ required=(
   vision.html
   privacy.html
   terms.html
+  quickbooks.html
+  quickbooks-connect.html
+  quickbooks-disconnect.html
   site.css
   site.js
   legal.css
@@ -37,8 +40,21 @@ grep -q "danny.figueroa@thenowmassage.com" contact.html
 grep -q "Our Vision" vision.html
 grep -q "Privacy Policy" privacy.html
 grep -q "Terms of Service" terms.html
+grep -q "private QuickBooks integration" privacy.html
+grep -q "Private QuickBooks integration" terms.html
+grep -q "Private internal use" quickbooks.html
+grep -q "Connect or reconnect QuickBooks" quickbooks-connect.html
+grep -q "Disconnect QuickBooks" quickbooks-disconnect.html
+grep -q "Intuit and QuickBooks are registered trademarks" privacy.html
+grep -q "Intuit and QuickBooks are registered trademarks" terms.html
+grep -q "Intuit and QuickBooks are registered trademarks" quickbooks.html
+grep -q "Intuit and QuickBooks are registered trademarks" quickbooks-connect.html
+grep -q "Intuit and QuickBooks are registered trademarks" quickbooks-disconnect.html
+grep -q "noindex, nofollow" quickbooks.html
+grep -q "noindex, nofollow" quickbooks-connect.html
+grep -q "noindex, nofollow" quickbooks-disconnect.html
 
-pages=(index.html locations.html contact.html vision.html privacy.html terms.html)
+pages=(index.html locations.html contact.html vision.html privacy.html terms.html quickbooks.html quickbooks-connect.html quickbooks-disconnect.html)
 for page in "${pages[@]}"; do
   if ! grep -q 'href="site.css"' "$page"; then
     echo "missing site.css link: $page" >&2
@@ -61,6 +77,8 @@ done
 grep -q "html.js .nav-hamburger" site.css
 grep -q "html:not(.js) .nav-links" site.css
 grep -q "legal-main a" legal.css
+grep -q "trademark-notice" legal.css
+grep -q "trademark-notice" site.css
 grep -q "e.key === 'Escape'" site.js
 grep -q "aria-expanded" site.js
 python3 - <<'PY'

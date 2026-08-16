@@ -353,6 +353,14 @@ body.nav-open {
   color: rgb(56, 127, 239);
 }
 
+.trademark-notice {
+  max-width: 330px;
+  margin: 14px 0 0;
+  color: rgba(26, 26, 30, 0.44);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
 .footer-right {
   display: flex;
   flex-direction: column;
