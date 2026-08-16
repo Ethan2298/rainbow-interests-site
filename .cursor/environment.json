@@ -1,0 +1,11 @@
+{
+  "name": "Rainbow Interests",
+  "install": "ls index.html locations.html contact.html vision.html privacy.html terms.html legal.css logo-dark.svg grain.png hero-bg.png",
+  "start": "python3 -m http.server 8080 --bind 0.0.0.0",
+  "ports": [
+    {
+      "name": "Website",
+      "port": 8080
+    }
+  ]
+}
