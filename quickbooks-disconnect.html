@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Disconnect QuickBooks | Rainbow Interests</title>
-  <meta name="description" content="The Rainbow Interests QuickBooks connection has been terminated. Reconnect only with authorized access.">
+  <meta name="description" content="Disconnect the Rainbow Interests QuickBooks integration, or connect again after access is revoked in Intuit.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Host+Grotesk:wght@400&family=Geist+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -16,14 +16,15 @@
 </head>
 <body>
   <div class="page">
+    <!-- site-nav -->
     <nav class="nav-outer" aria-label="Primary navigation">
       <div class="nav-pill" id="navPill">
-        <a class="nav-logo-group" href="index.html">
+        <a href="index.html" class="nav-logo-group">
           <img src="logo-dark.svg" alt="Rainbow Interests logo" class="nav-logo-img">
           <span class="nav-brand">Rainbow Interests</span>
         </a>
         <div class="nav-links">
-          <a href="quickbooks.html">QuickBooks Integration</a>
+          <a href="quickbooks.html" aria-current="page">QuickBooks Integration</a>
         </div>
         <a href="contact.html" class="nav-get-started">Contact Us</a>
         <button type="button" class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
@@ -31,23 +32,27 @@
         </button>
       </div>
     </nav>
+    <!-- /site-nav -->
 
+    <!-- site-overlay -->
     <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true">
-      <a href="quickbooks.html">QuickBooks Integration</a>
+      <a href="quickbooks.html" aria-current="page">QuickBooks Integration</a>
       <a href="contact.html">Contact Us</a>
       <button type="button" class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu"></button>
     </div>
+    <!-- /site-overlay -->
 
     <main class="legal-main content-wrap">
       <p class="eyebrow">Internal integration</p>
       <h1>Disconnect QuickBooks</h1>
-      <p class="intro">The connection between the Rainbow Interests integration and this QuickBooks company has been terminated.</p>
-      <section class="legal-section"><h2>Connection terminated</h2><p>Access for this QuickBooks company has been revoked. The public Rainbow Interests website does not keep QuickBooks records or connection tokens. An authorized administrator should also remove the matching local CLI profile so stored tokens are deleted from the device.</p></section>
-      <section class="legal-section"><h2>Reconnect</h2><p>If this disconnect was unintentional, or you need access again, use the <a href="quickbooks-connect.html">connect or reconnect</a> page. Connection is available only to authorized Rainbow Interests personnel and authorized administrators of the QuickBooks company. Each company must be approved separately through Intuit's authorization screen.</p></section>
-      <section class="legal-section"><h2>If you still need to revoke access</h2><p>Use the app-connection settings in QuickBooks to revoke the Rainbow Interests connection, or contact Rainbow Interests and identify the company that should be disconnected.</p></section>
+      <p class="intro">Intuit uses this page as the post-revoke landing. Opening it directly does not disconnect a QuickBooks company.</p>
+      <section class="legal-section"><h2>If Intuit sent you here</h2><p>After a successful revoke in Intuit, the QuickBooks connection for this app is terminated. The public Rainbow Interests website does not keep QuickBooks records or connection tokens. An authorized administrator should also remove the matching local CLI profile so stored tokens are deleted from the device.</p></section>
+      <section class="legal-section"><h2>Disconnect from QuickBooks</h2><p>To revoke access, use the app-connection settings in QuickBooks, or contact Rainbow Interests and identify the company that should be disconnected. Visiting this URL by itself does not revoke access.</p></section>
+      <section class="legal-section"><h2>Connect or reconnect</h2><p>If you still need access, or a disconnect was unintentional, use the <a href="quickbooks-connect.html">connect or reconnect</a> page. Connection is available only to authorized Rainbow Interests personnel and authorized administrators of the QuickBooks company. Each company must be approved separately through Intuit's authorization screen.</p></section>
       <section class="legal-section"><h2>Questions</h2><p>Use the public contact information below if you need help confirming that a connection has been removed.</p></section>
     </main>
 
+    <!-- site-footer -->
     <footer class="footer content-wrap">
       <div class="footer-left">
         <a href="index.html" class="footer-logo">
@@ -65,13 +70,14 @@
       <div class="footer-right">
         <span class="footer-right-heading">Navigation</span>
         <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="quickbooks.html">QuickBooks Integration</a>
+          <a href="quickbooks.html" aria-current="page">QuickBooks Integration</a>
           <a href="quickbooks-connect.html">Connect or reconnect</a>
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms of Service</a>
         </nav>
       </div>
     </footer>
+    <!-- /site-footer -->
   </div>
 </body>
 </html>

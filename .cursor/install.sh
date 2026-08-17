@@ -45,7 +45,9 @@ grep -q "Private QuickBooks integration" terms.html
 grep -q "Private internal use" quickbooks.html
 grep -q "Connect or reconnect QuickBooks" quickbooks-connect.html
 grep -q "Disconnect QuickBooks" quickbooks-disconnect.html
-grep -q "has been terminated" quickbooks-disconnect.html
+grep -q "post-revoke landing" quickbooks-disconnect.html
+grep -q "is terminated" quickbooks-disconnect.html
+grep -q "does not revoke access" quickbooks-disconnect.html
 grep -q "quickbooks-connect.html" quickbooks-disconnect.html
 grep -q "Intuit and QuickBooks are registered trademarks" privacy.html
 grep -q "Intuit and QuickBooks are registered trademarks" terms.html
@@ -82,6 +84,14 @@ for page in "${pages[@]}"; do
     echo "missing main landmark: $page" >&2
     exit 1
   fi
+  if ! grep -q '<!-- site-nav -->' "$page"; then
+    echo "missing generated site-nav markers: $page" >&2
+    exit 1
+  fi
+  if ! grep -q '<!-- site-footer -->' "$page"; then
+    echo "missing generated site-footer markers: $page" >&2
+    exit 1
+  fi
 done
 
 grep -q "html.js .nav-hamburger" site.css
@@ -109,7 +119,8 @@ PY
 
 python3 -m py_compile .cursor/serve-site.py
 
-node --test tests/intuit-callback.test.js tests/site-nav.test.js
+node scripts/apply-site-chrome.js --check
+node --test tests/intuit-callback.test.js tests/site-nav.test.js tests/site-chrome.test.js
 
 rm -rf "$SERVE_ROOT"
 mkdir -p "$SERVE_ROOT"

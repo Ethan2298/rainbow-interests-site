@@ -37,7 +37,7 @@ Host+Grotesk:wght@400
 ### Primary Palette
 | Name | Value | Usage |
 |------|-------|-------|
-| Blue | `rgb(56, 127, 239)` / `#387FEF` | Brand accent, heading emphasis, ruled lines |
+| Blue | `rgb(56, 127, 239)` / `#387FEF` | Brand accent, heading emphasis, rainbow arch |
 | Yellow | `rgb(255, 225, 84)` / `#FFE154` | Rainbow logo (middle arch) |
 | Red/Rose | `rgb(255, 63, 90)` / `#FF3F5A` | Rainbow logo (inner arch), margin line |
 
@@ -47,15 +47,12 @@ Host+Grotesk:wght@400
 | Text | `rgb(26, 26, 30)` | Primary text |
 | Text muted | `rgba(26, 26, 30, 0.5)` | Secondary text, descriptions |
 | Text faint | `rgba(26, 26, 30, 0.35)` | Tertiary text, social icons |
-| Paper | `rgb(252, 251, 249)` | Paper background |
-| Linen | `rgb(235, 232, 228)` | Page background (behind paper) |
+| Page | `rgb(252, 251, 249)` | Full-page cream shell (`.page`) |
 | Nav dark | `rgba(26, 26, 30, 0.8)` | Navbar pill |
 
 ### Functional Colors
 | Name | Value | Usage |
 |------|-------|-------|
-| Margin line | `rgba(220, 80, 80, 0.22)` | Notebook red margin rule |
-| Ruled lines | `rgba(56, 127, 239, 0.035)` | Faint horizontal notebook lines |
 | Divider | `rgba(26, 26, 30, 0.06)` | Section separators |
 | Hover bg | `rgba(255, 255, 255, 0.12–0.2)` | Button/link hover states |
 
@@ -84,27 +81,25 @@ Logo icon left, "Rainbow Interests" text right in DM Sans 500 (or 14px in nav co
 
 ---
 
-## Design Concept: The Paper
+## Design Concept: Cream page shell
 
-The site presents as a **sheet of notebook paper** floating on a warm linen surface.
+Every page uses the same full-bleed cream shell as the home page. There is no notebook, paper sheet, linen backdrop, or ruled-line treatment.
 
 ### Key Elements
-- **Paper container**: max-width 900px, `rgb(252, 251, 249)`, soft multi-layer box-shadow
-- **Notebook margin**: single vertical red line at left: 56px (`rgba(220, 80, 80, 0.22)`)
-- **Ruled lines**: horizontal lines every 28px (`rgba(56, 127, 239, 0.035)`)
-- **Paper texture**: fractal noise overlay at low opacity for tactile grain
-- **Content padding**: left 72px (past the margin line), right 64px
+- **Page shell**: `.page`, full width, `rgb(252, 251, 249)`
+- **Content wrap**: `.content-wrap`, max-width 1080px, centered, 64px horizontal padding (36px left / 24px right on small screens)
+- **Shared chrome**: sticky glass nav pill, full-screen mobile overlay, and two-column footer — generated from `scripts/apply-site-chrome.js`
 
 ### Visual Hierarchy
-1. Geist Mono headings — the "typed" content on the page
-2. DM Sans body text — clean annotations
-3. Images — photos pasted into the notebook
-4. Thin rules and whitespace — let the paper breathe
+1. Geist Mono headings
+2. DM Sans body text
+3. Photographs and location cards sitting on the cream ground
+4. Thin rules and whitespace
 
 ### What to Avoid
+- Paper, linen, notebook margin, or ruled-line decoration
 - Heavy borders or shadows on interior elements
-- Saturated background colors — keep everything on the paper tone
-- Decorative flourishes — the notebook lines ARE the decoration
+- Saturated background colors — keep everything on the cream tone
 - Too many font weights — keep it light (400) for headings, medium (500) only for UI
 
 ---
@@ -126,7 +121,7 @@ The site presents as a **sheet of notebook paper** floating on a warm linen surf
 - Generous vertical padding (48px) above and below
 
 ### Cards (Location)
-- No border, no shadow — just image + text on paper
+- No border, no shadow — just image + text on the cream page
 - Image: full width, 220px height, 4px radius
 - Title in Geist Mono, details in Host Grotesk muted
 
@@ -134,14 +129,13 @@ The site presents as a **sheet of notebook paper** floating on a warm linen surf
 
 ## Responsive Behavior
 
-| Breakpoint | Paper behavior |
+| Breakpoint | Page behavior |
 |------------|----------------|
-| >1024px | 900px centered, floating on linen, 24px body padding |
-| 768–1024px | 900px, rounded corners, 24px body padding |
-| <768px | Edge-to-edge, no shadow, paper becomes the page |
+| >1024px | Full-bleed cream `.page`, `.content-wrap` at 1080px |
+| 768–1024px | Same shell, wrap still 1080px with 64px padding |
+| <768px | Same shell, wrap padding 36px left / 24px right |
 
 ### Mobile
 - Navbar shows hamburger menu
 - Full-screen overlay nav in Geist Mono
 - Content padding reduces to 36px left, 24px right
-- Margin line shifts to 28px left

@@ -41,6 +41,7 @@ require "/" 'href="site.css"'
 require "/" 'src="site.js"'
 require "/" "document.documentElement.classList.add('js')"
 require "/" 'aria-label="Primary navigation"'
+require "/" "<!-- site-nav -->"
 require "/" "<main"
 forbid "/" 'class="paper"'
 forbid "/" "paper-texture"
@@ -110,9 +111,11 @@ require "/quickbooks-disconnect.html" 'href="site.css"'
 require "/quickbooks-disconnect.html" 'src="site.js"'
 require "/quickbooks-disconnect.html" "noindex, nofollow"
 require "/quickbooks-disconnect.html" "Disconnect QuickBooks"
-require "/quickbooks-disconnect.html" "has been terminated"
+require "/quickbooks-disconnect.html" "post-revoke landing"
+require "/quickbooks-disconnect.html" "is terminated"
+require "/quickbooks-disconnect.html" "does not revoke access"
 require "/quickbooks-disconnect.html" "quickbooks-connect.html"
-require "/quickbooks-disconnect.html" "Reconnect"
+require "/quickbooks-disconnect.html" "Connect or reconnect"
 require "/quickbooks-disconnect.html" "Intuit and QuickBooks are registered trademarks"
 forbid "/quickbooks-disconnect.html" 'class="paper"'
 

@@ -89,6 +89,7 @@
 <body>
 
 <div class="page">
+  <!-- site-nav -->
   <nav class="nav-outer" aria-label="Primary navigation">
     <div class="nav-pill" id="navPill">
       <a href="index.html" class="nav-logo-group">
@@ -105,13 +106,16 @@
       </button>
     </div>
   </nav>
+  <!-- /site-nav -->
 
+  <!-- site-overlay -->
   <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true">
     <a href="index.html">Home</a>
-    <a href="locations.html">Locations</a>
+    <a href="locations.html" aria-current="page">Locations</a>
     <a href="contact.html">Contact Us</a>
     <button type="button" class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu"></button>
   </div>
+  <!-- /site-overlay -->
 
   <main>
   <div class="page-header content-wrap">
@@ -151,6 +155,7 @@
   </section>
   </main>
 
+  <!-- site-footer -->
   <footer class="footer content-wrap">
     <div class="footer-left">
       <a href="index.html" class="footer-logo">
@@ -168,13 +173,14 @@
       <span class="footer-right-heading">Navigation</span>
       <nav class="footer-nav" aria-label="Footer navigation">
         <a href="index.html">Home</a>
-        <a href="locations.html">Locations</a>
+        <a href="locations.html" aria-current="page">Locations</a>
         <a href="contact.html">Contact Us</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
       </nav>
     </div>
   </footer>
+  <!-- /site-footer -->
 </div>
 </body>
 </html>
