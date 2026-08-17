@@ -45,6 +45,8 @@ grep -q "Private QuickBooks integration" terms.html
 grep -q "Private internal use" quickbooks.html
 grep -q "Connect or reconnect QuickBooks" quickbooks-connect.html
 grep -q "Disconnect QuickBooks" quickbooks-disconnect.html
+grep -q "has been terminated" quickbooks-disconnect.html
+grep -q "quickbooks-connect.html" quickbooks-disconnect.html
 grep -q "Intuit and QuickBooks are registered trademarks" privacy.html
 grep -q "Intuit and QuickBooks are registered trademarks" terms.html
 grep -q "Intuit and QuickBooks are registered trademarks" quickbooks.html

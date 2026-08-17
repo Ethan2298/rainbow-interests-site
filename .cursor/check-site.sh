@@ -110,6 +110,9 @@ require "/quickbooks-disconnect.html" 'href="site.css"'
 require "/quickbooks-disconnect.html" 'src="site.js"'
 require "/quickbooks-disconnect.html" "noindex, nofollow"
 require "/quickbooks-disconnect.html" "Disconnect QuickBooks"
+require "/quickbooks-disconnect.html" "has been terminated"
+require "/quickbooks-disconnect.html" "quickbooks-connect.html"
+require "/quickbooks-disconnect.html" "Reconnect"
 require "/quickbooks-disconnect.html" "Intuit and QuickBooks are registered trademarks"
 forbid "/quickbooks-disconnect.html" 'class="paper"'
 
