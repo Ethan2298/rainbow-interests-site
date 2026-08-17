@@ -40,6 +40,8 @@ require "/" "Franchise Operations"
 require "/" 'href="site.css"'
 require "/" 'src="site.js"'
 require "/" "document.documentElement.classList.add('js')"
+require "/" 'aria-label="Primary navigation"'
+require "/" "<main"
 forbid "/" 'class="paper"'
 forbid "/" "paper-texture"
 
@@ -47,6 +49,8 @@ expect "/locations.html" 200
 require "/locations.html" "The NOW Massage Fort Lauderdale"
 require "/locations.html" 'href="site.css"'
 require "/locations.html" 'src="site.js"'
+require "/locations.html" 'aria-label="Primary navigation"'
+require "/locations.html" "<main"
 forbid "/locations.html" 'class="paper"'
 
 expect "/contact.html" 200
@@ -60,6 +64,11 @@ forbid "/contact.html" 'class="paper"'
 expect "/vision.html" 200
 require "/vision.html" 'href="site.css"'
 require "/vision.html" 'src="site.js"'
+require "/vision.html" 'aria-label="Primary navigation"'
+require "/vision.html" "<main"
+require "/vision.html" "Our Vision"
+forbid "/vision.html" 'class="paper"'
+forbid "/vision.html" "margin-top: -120px"
 
 expect "/privacy.html" 200
 require "/privacy.html" 'href="site.css"'
@@ -125,6 +134,7 @@ expect "/site.js" 200
 require "/site.js" "e.key === 'Escape'"
 require "/site.js" "aria-expanded"
 require "/site.js" "inert"
+require "/site.js" "data-nav-tabindex"
 
 expect "/legal.css" 200
 require "/legal.css" "legal-main a"

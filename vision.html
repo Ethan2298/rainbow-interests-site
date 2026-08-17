@@ -15,8 +15,7 @@
   width: 100%;
   min-height: 480px;
   overflow: hidden;
-  margin-top: -120px;
-  padding-top: 120px;
+  z-index: 1;
 }
 
 .vision-hero img {
@@ -153,7 +152,7 @@
 <body>
 
 <div class="page">
-  <nav class="nav-outer">
+  <nav class="nav-outer" aria-label="Primary navigation">
     <div class="nav-pill" id="navPill">
       <a href="index.html" class="nav-logo-group">
         <img src="logo-dark.svg" alt="Rainbow Interests logo" class="nav-logo-img">
@@ -177,6 +176,7 @@
     <button type="button" class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu"></button>
   </div>
 
+  <main>
   <div class="vision-hero">
     <img
       src="https://framerusercontent.com/images/ZPeWLCAPr9negdElGk5qzVOw7kM.png"
@@ -245,6 +245,7 @@
       <p><strong>This is the kind of great we mean.</strong></p>
     </section>
   </div>
+  </main>
 
   <footer class="footer content-wrap">
     <div class="footer-left">
@@ -261,7 +262,7 @@
     </div>
     <div class="footer-right">
       <span class="footer-right-heading">Navigation</span>
-      <nav class="footer-nav">
+      <nav class="footer-nav" aria-label="Footer navigation">
         <a href="index.html">Home</a>
         <a href="locations.html">Locations</a>
         <a href="contact.html">Contact Us</a>

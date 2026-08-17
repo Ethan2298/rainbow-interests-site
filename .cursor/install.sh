@@ -72,6 +72,14 @@ for page in "${pages[@]}"; do
     echo "paper container still present: $page" >&2
     exit 1
   fi
+  if ! grep -q 'aria-label="Primary navigation"' "$page"; then
+    echo "missing primary nav label: $page" >&2
+    exit 1
+  fi
+  if ! grep -q '<main' "$page"; then
+    echo "missing main landmark: $page" >&2
+    exit 1
+  fi
 done
 
 grep -q "html.js .nav-hamburger" site.css
@@ -81,6 +89,11 @@ grep -q "trademark-notice" legal.css
 grep -q "trademark-notice" site.css
 grep -q "e.key === 'Escape'" site.js
 grep -q "aria-expanded" site.js
+grep -q "data-nav-tabindex" site.js
+if grep -q "margin-top: -120px" vision.html; then
+  echo "vision hero must not pull under the sticky nav" >&2
+  exit 1
+fi
 python3 - <<'PY'
 from pathlib import Path
 import re
@@ -93,6 +106,8 @@ if "overflow" in match.group(1):
 PY
 
 python3 -m py_compile .cursor/serve-site.py
+
+node --test tests/intuit-callback.test.js tests/site-nav.test.js
 
 rm -rf "$SERVE_ROOT"
 mkdir -p "$SERVE_ROOT"
